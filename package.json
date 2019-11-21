@@ -23,19 +23,16 @@
         "gh-pages": "gh-pages -d build"
     },
     "dependencies": {
-        "bootstrap": "^4.3.1",
         "classnames": "^2.2.6",
         "connected-react-router": "^6.5.2",
-        "formik": "^1.5.8",
         "history": "^4.10.1",
         "immutable": "^4.0.0-rc.12",
-        "moment": "^2.24.0",
         "react": "^16.10.2",
-        "react-bootstrap": "^1.0.0-beta.14",
         "react-dom": "^16.10.2",
         "react-redux": "^7.1.1",
         "react-router-dom": "^5.1.2",
         "redux": "^4.0.4",
+        "redux-form": "^8.2.6",
         "redux-saga": "^1.1.1",
         "reset-css": "^5.0.0",
         "uuid": "^3.3.3"

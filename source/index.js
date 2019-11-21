@@ -11,7 +11,6 @@ import './theme/init';
 
 // App
 import App from './navigation/App';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 render(
     <Provider store = { store }>

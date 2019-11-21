@@ -1,26 +1,23 @@
 // Core
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
 
 // Instruments
 import { book } from './book';
 
 // Pages
-import { Home } from '../pages';
+import { Signup } from '../pages';
 
 export default class Public extends Component {
     render () {
         return (
-            <Container>
-                <Switch>
+            <Switch>
 
-                    <Route exact component = { Home } path = { book.home } />
+                <Route component = { Signup } path = { book.signup } />
 
-                    <Redirect to = { book.home } />
+                <Redirect to = { book.signup } />
 
-                </Switch>
-            </Container>
+            </Switch>
         );
     }
 }
