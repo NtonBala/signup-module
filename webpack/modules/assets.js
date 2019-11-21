@@ -58,7 +58,7 @@ export const setupHtml = () => ({
         new HtmlWebpackPlugin({
             inject:   false,
             template: HtmlWebpackTemplate,
-            title:    'Todo App UMAI Test Task',
+            title:    'Project Title',
             favicon:  `${statics}/favicon/React.js-favicon-512x512.png`,
             meta:     [
                 {

@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 import { book } from './book';
 
 // Pages
-import { Home, Completed, Trash, CreateEdit } from '../pages';
+import { Home } from '../pages';
 
 export default class Public extends Component {
     render () {
@@ -15,10 +15,7 @@ export default class Public extends Component {
             <Container>
                 <Switch>
 
-                    <Route component = { Home } path = { book.home } />
-                    <Route component = { Completed } path = { book.completed } />
-                    <Route component = { Trash } path = { book.trash } />
-                    <Route component = { CreateEdit } path = { book.createEdit } />
+                    <Route exact component = { Home } path = { book.home } />
 
                     <Redirect to = { book.home } />
 
