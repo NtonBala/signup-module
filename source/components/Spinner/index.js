@@ -7,7 +7,7 @@ import Styles from './styles.m.css';
 
 const mapStateToProps = (state) => {
     return {
-        isFetching: state.ui.get('isFetching'),
+        isFetching: state.isFetching,
     };
 };
 
