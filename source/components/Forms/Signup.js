@@ -3,29 +3,35 @@ import React from 'react';
 import { func } from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 
+// Component
+import { TextField } from './components';
+
 let SignupForm = ({ handleSubmit }) => {
     return (
         <div>
             <h3>Signup</h3>
 
             <form onSubmit = { handleSubmit }>
-                <div>
-                    <label htmlFor = 'email'>email</label>
-                    <Field
-                        component = 'input'
-                        name = 'email'
-                        type = 'email'
-                    />
-                </div>
+                <Field
+                    component = { TextField }
+                    label = 'email'
+                    name = 'email'
+                    type = 'email'
+                />
 
-                <div>
-                    <label htmlFor = 'password'>password</label>
-                    <Field
-                        component = 'input'
-                        name = 'password'
-                        type = 'password'
-                    />
-                </div>
+                <Field
+                    component = { TextField }
+                    label = 'password'
+                    name = 'password'
+                    type = 'password'
+                />
+
+                <Field
+                    component = { TextField }
+                    label = 'confirm password'
+                    name = 'confirmPassword'
+                    type = 'password'
+                />
 
                 <div>
                     <button type = 'submit'>Submit</button>

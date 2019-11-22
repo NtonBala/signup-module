@@ -1,34 +1,33 @@
 // Core
 import React from 'react';
-import { string } from 'prop-types';
-import { Field } from 'redux-form';
+import { object, string } from 'prop-types';
 
 // Instruments
 import Styles from './styles.m.css';
 
-const TextField = ({ name, type = 'text', label }) => {
+const TextField = ({ input, meta, label }) => {
     return (
         <div className = { Styles.field }>
-            {label &&
+            {label && meta.valid &&
                 <label
                     htmlFor = { name }>
                     { label }
                 </label>
             }
 
-            <Field
-                component = 'input'
-                name = { name }
-                type = { type }
-            />
+            {meta.touched && meta.error &&
+                <span>{ meta.error }</span>
+            }
+
+            <input { ...input } />
         </div>
     );
 };
 
 TextField.propTypes = {
-    name:  string.isRequired,
+    input: object.isRequired,
+    meta:  object.isRequired,
     label: string,
-    type:  string,
 };
 
 export default TextField;
