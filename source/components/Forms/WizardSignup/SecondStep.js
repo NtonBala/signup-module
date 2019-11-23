@@ -21,7 +21,12 @@ let SecondStep = ({ handleSubmit, stepBackward }) => {
             <HearSelector />
 
             <div>
-                <button onClick = { stepBackward }>Back</button>
+                <button
+                    type = 'button'
+                    onClick = { stepBackward }>
+                    Back
+                </button>
+
                 <button type = 'submit'>Next &#8594;</button>
             </div>
         </form>
