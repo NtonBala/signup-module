@@ -2,10 +2,19 @@
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
 
-    & span {
+    & .bar {
         display: block;
         width: 33.3%;
         height: .33em;
         background-color: blue;
+        transition: width 2s ease;
+    }
+
+    & .secondStep {
+        width: 66.6%;
+    }
+
+    & .thirdStep {
+        width: 100%;
     }
 }
