@@ -4,13 +4,11 @@ import { func } from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 
 // Component
-import { TextField } from './components';
+import { TextField } from './elements';
 
 let SignupForm = ({ handleSubmit }) => {
     return (
         <div>
-            <h3>Signup</h3>
-
             <form onSubmit = { handleSubmit }>
                 <Field
                     component = { TextField }

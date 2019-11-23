@@ -1,0 +1,11 @@
+.progress {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+
+    & span {
+        display: block;
+        width: 33.3%;
+        height: .33em;
+        background-color: blue;
+    }
+}

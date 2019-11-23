@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Components
-import { Catcher, Spinner, SignupForm } from '../components';
+import { Catcher, Spinner, WizardSignupForm } from '../components';
 
 const SignupPage = () => {
     const onSubmit = (values) => {
@@ -12,7 +12,8 @@ const SignupPage = () => {
     return (
         <Catcher>
             <Spinner />
-            <SignupForm onSubmit = { onSubmit } />
+
+            <WizardSignupForm onSubmit = { onSubmit } />
         </Catcher>
     );
 };
