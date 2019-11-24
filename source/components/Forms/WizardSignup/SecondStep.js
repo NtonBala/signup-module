@@ -3,27 +3,34 @@ import React from 'react';
 import { func } from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 
-// Components
-import { BirthDate, Gender, HearSelector } from '../elements';
+// Elements
+import { BirthDate, Gender, HearSelector, Nav } from '../elements';
+
+// Instruments
+import Styles from './styles.m.css';
 
 let SecondStep = ({ handleSubmit, stepBackward }) => {
     return (
-        <form onSubmit = { handleSubmit }>
-            <Field
-                component = { BirthDate }
-                label = 'date of birth'
-                name = 'date_of_birth'
-                type = 'text'
-            />
+        <form
+            className = { Styles.general }
+            onSubmit = { handleSubmit }>
+            <div className = { Styles.body } >
+                <Field
+                    component = { BirthDate }
+                    label = 'date of birth'
+                    name = 'date_of_birth'
+                    type = 'text'
+                />
 
-            <Gender />
+                <Gender />
 
-            <HearSelector />
-
-            <div>
-                <button onClick = { stepBackward }>Back</button>
-                <button type = 'submit'>Next &#8594;</button>
+                <HearSelector />
             </div>
+
+            <Nav
+                step = { 2 }
+                stepBackward = { stepBackward }
+            />
         </form>
     );
 };

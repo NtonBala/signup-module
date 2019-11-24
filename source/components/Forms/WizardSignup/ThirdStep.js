@@ -3,15 +3,22 @@ import React from 'react';
 import { func } from 'prop-types';
 import { reduxForm } from 'redux-form';
 
-// Components
-import success from 'theme/assets/success';
+// Instruments
+import Styles from './styles.m.css';
+import successCircle from 'theme/assets/success-circle';
+import rightArrow from 'theme/assets/right-arrow';
 
 let ThirdStep = ({ handleSubmit }) => {
     return (
-        <form onSubmit = { handleSubmit }>
-            <img src = { success } />
+        <form
+            className = { Styles.final }
+            onSubmit = { handleSubmit }>
             <div>
-                <button type = 'submit'>Go to Dashboard &#8594;</button>
+                <img src = { successCircle } />
+                <button type = 'submit'>
+                    Go to Dashboard
+                    <img src = { rightArrow } />
+                </button>
             </div>
         </form>
     );

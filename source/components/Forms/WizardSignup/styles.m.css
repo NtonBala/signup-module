@@ -1,1 +1,76 @@
-.form {}
+.form {
+    width: 21em;
+    height: 28em;
+    border: .09em solid var(--paletteColor1);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+
+    & h3 {
+        padding: 1.3em;
+        color: var(--paletteColor2);
+        text-align: center;
+    }
+
+    & form {
+        flex-grow: 1;
+        display: flex;
+    }
+
+    & .general {
+        flex-direction: column;
+        justify-content: space-between;
+
+        & label {
+            font-size: .8em;
+            text-transform: uppercase;
+            color: var(--paletteColor7);
+        }
+
+        & strong {
+            font-size: .8em;
+            font-weight: normal;
+            text-transform: uppercase;
+            color: var(--paletteColor5);
+        }
+    }
+
+    & .final {
+        justify-content: center;
+        align-items: center;
+
+        & div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & img {
+                width: 8em;
+            }
+
+            & button {
+                display: flex;
+                align-items: center;
+                color: var(--paletteColor2);
+                border: .05em solid;
+                border-radius: 4px;
+                margin-top: 2.5em;
+                padding: 1em;
+
+                &:hover {
+                    color: var(--paletteColor8);
+                    border-color: var(--paletteColor8);
+                }
+
+                & img {
+                    width: 1em;
+                    margin-left: .5em;
+                }
+            }
+        }
+    }
+
+    & .body {
+        padding: 2.5em 1em;
+    }
+}

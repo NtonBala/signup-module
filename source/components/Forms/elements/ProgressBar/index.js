@@ -7,7 +7,6 @@ import cx from 'classnames';
 import Styles from './styles.m.css';
 
 const ProgressBar = ({ step }) => {
-    console.log('-> step:', step);
     const _getBarStyles = () => {
         return cx(Styles.bar, {
             [Styles.secondStep]: step === 2,

@@ -3,36 +3,41 @@ import React from 'react';
 import { func } from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 
-// Components
-import { TextField } from '../elements';
+// Elements
+import { TextField, Nav } from '../elements';
+
+// Instruments
+import Styles from './styles.m.css';
 
 let FirstStep = ({ handleSubmit }) => {
     return (
-        <form onSubmit = { handleSubmit }>
-            <Field
-                component = { TextField }
-                label = 'email'
-                name = 'email'
-                type = 'email'
-            />
+        <form
+            className = { Styles.general }
+            onSubmit = { handleSubmit }>
+            <div className = { Styles.body } >
+                <Field
+                    component = { TextField }
+                    label = 'email'
+                    name = 'email'
+                    type = 'email'
+                />
 
-            <Field
-                component = { TextField }
-                label = 'password'
-                name = 'password'
-                type = 'password'
-            />
+                <Field
+                    component = { TextField }
+                    label = 'password'
+                    name = 'password'
+                    type = 'password'
+                />
 
-            <Field
-                component = { TextField }
-                label = 'confirm password'
-                name = 'confirmPassword'
-                type = 'password'
-            />
-
-            <div>
-                <button type = 'submit'>Next &#8594;</button>
+                <Field
+                    component = { TextField }
+                    label = 'confirm password'
+                    name = 'confirmPassword'
+                    type = 'password'
+                />
             </div>
+
+            <Nav step = { 1 } />
         </form>
     );
 };
