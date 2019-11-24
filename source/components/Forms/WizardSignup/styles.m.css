@@ -72,5 +72,17 @@
 
     & .body {
         padding: 2.5em 1em;
+
+        &.second > div {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 1.5em;
+
+            & label,
+            & strong {
+                padding-bottom: 1em;
+                text-align: center;
+            }
+        }
     }
 }

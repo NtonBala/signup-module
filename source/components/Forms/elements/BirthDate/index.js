@@ -8,14 +8,14 @@ import Styles from './styles.m.css';
 const BirthDate = ({ input, meta: { valid, error, touched }, label }) => {
     return (
         <div className = { Styles.birthDate }>
-            {label && valid &&
+            { label && valid &&
                 <label
                     htmlFor = { name }>
                     { label }
                 </label>
             }
 
-            {touched && error && <span>{ error }</span> }
+            { touched && error && <strong>{ error }</strong> }
 
             <input
                 { ...input }

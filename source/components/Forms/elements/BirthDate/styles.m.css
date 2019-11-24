@@ -1,3 +1,5 @@
 .birthDate {
-
+    & input {
+        text-align: center;
+    }
 }
