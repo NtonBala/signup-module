@@ -25,3 +25,26 @@ body {
         width: 100%;
     }
 }
+
+#app {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.page {
+    min-height: 100vh;
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+}

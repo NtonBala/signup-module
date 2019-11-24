@@ -13,7 +13,9 @@ const SignupPage = () => {
         <Catcher>
             <Spinner />
 
-            <WizardSignupForm onSubmit = { onSubmit } />
+            <div className = 'page centered-content'>
+                <WizardSignupForm onSubmit = { onSubmit } />
+            </div>
         </Catcher>
     );
 };

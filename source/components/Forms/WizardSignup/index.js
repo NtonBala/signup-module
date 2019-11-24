@@ -7,8 +7,11 @@ import FirstStep from './FirstStep';
 import SecondStep from './SecondStep';
 import ThirdStep from './ThirdStep';
 
-// Components
+// Elements
 import { ProgressBar } from '../elements';
+
+// Instruments
+import Styles from './styles.m.css';
 
 const WizardSignup = ({ onSubmit }) => {
     const [step, setStep] = useState(1);
@@ -24,7 +27,7 @@ const WizardSignup = ({ onSubmit }) => {
     const titleJSX = step !== 3 ? <h3>Signup</h3> : <h3>Thank you!</h3>;
 
     return (
-        <div>
+        <div className = { Styles.form } >
             { titleJSX }
 
             <ProgressBar step = { step } />

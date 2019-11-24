@@ -1,0 +1,33 @@
+.nav {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    border-top: .1em solid var(--paletteColor1);
+
+    &.reverse {
+        flex-direction: row-reverse;
+    }
+
+    & .next {
+        display: flex;
+        align-items: center;
+        color: var(--paletteColor2);
+
+        & img {
+            width: 1em;
+            margin-left: .5em;
+        }
+    }
+
+    & .next:hover {
+        color: var(--paletteColor8);
+    }
+
+    & .back {
+        color: var(--paletteColor9);
+    }
+
+    & .back:hover {
+        color: var(--paletteColor10);
+    }
+}
