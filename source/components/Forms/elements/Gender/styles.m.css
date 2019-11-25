@@ -34,6 +34,8 @@
 
         & label:nth-child(1) {
             border-right: 0;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
         }
 
         & label:nth-child(2) {
@@ -43,9 +45,10 @@
 
         & label:nth-child(3) {
             border-right: .1em solid var(--paletteColor6);
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
         }
 
-        & label:hover,
         & .selected {
             & span {
                 background-color: var(--paletteColor4);
@@ -75,7 +78,23 @@
                 color: var(--paletteColor8);
                 font-weight: normal;
                 border: .1em solid var(--paletteColor4);
+                top: -.1em;
+                left: -.1em;
                 z-index: 2;
+            }
+
+            &:nth-child(1) {
+                & span {
+                    border-top-left-radius: 3px;
+                    border-bottom-left-radius: 3px;
+                }
+            }
+
+            &:nth-child(3) {
+                & span {
+                    border-top-right-radius: 3px;
+                    border-bottom-right-radius: 3px;
+                }
             }
         }
     }
