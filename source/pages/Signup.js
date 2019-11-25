@@ -6,7 +6,7 @@ import { Catcher, Spinner, WizardSignupForm } from '../components';
 
 const SignupPage = () => {
     const onSubmit = (values) => {
-        console.log('-> user data:', values);
+        console.log('-> user data:', JSON.stringify(values));
     };
 
     return (

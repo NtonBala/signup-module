@@ -1,5 +1,6 @@
 .birthDate {
     & input {
         text-align: center;
+        border: .1em solid var(--paletteColor6);
     }
 }

@@ -39,7 +39,7 @@ const Nav = ({ step, stepBackward }) => {
 
 Nav.propTypes = {
     step:         number.isRequired,
-    stepBackward: func.isRequired,
+    stepBackward: func,
 };
 
 export default Nav;

@@ -5,6 +5,7 @@
 
 body {
     font-family: roboto mono, roboto, system-ui;
+    background-color: var(--paletteColor3);
 
     /* Зачаровать шрифты */
     font-smoothing: antialiased;

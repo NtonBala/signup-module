@@ -78,8 +78,8 @@
             flex-direction: column;
             padding-bottom: 1.5em;
 
-            & label,
-            & strong {
+            & > label,
+            & > strong {
                 padding-bottom: 1em;
                 text-align: center;
             }
