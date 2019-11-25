@@ -3,4 +3,45 @@
         text-align: center;
         border: .1em solid var(--paletteColor6);
     }
+
+    & .reduxInput {
+        width: 0;
+        height: 0;
+        pointer-events: none;
+        opacity: 0;
+        position: absolute;
+        right: -9999px;
+    }
+
+    & .wrapper {
+        display: flex;
+        height: 2.4em;
+
+        & input {
+            width: 33.33%;
+            font-size: .8em;
+            font-weight: normal;
+            text-transform: uppercase;
+            color: var(--paletteColor7);
+
+            &::placeholder {
+                color: var(--paletteColor10);
+            }
+
+            &:nth-child(1) {
+                border-top-left-radius: 3px;
+                border-bottom-left-radius: 3px;
+            }
+
+            &:nth-child(2) {
+                border-left: 0;
+                border-right: 0;
+            }
+
+            &:nth-child(3) {
+                border-top-right-radius: 3px;
+                border-bottom-right-radius: 3px;
+            }
+        }
+    }
 }

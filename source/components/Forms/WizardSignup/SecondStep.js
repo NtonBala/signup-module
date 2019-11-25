@@ -1,7 +1,7 @@
 // Core
 import React from 'react';
 import { func } from 'prop-types';
-import { Field, reduxForm } from 'redux-form';
+import { reduxForm } from 'redux-form';
 import cx from 'classnames';
 
 // Elements
@@ -22,12 +22,7 @@ let SecondStep = ({ handleSubmit, stepBackward }) => {
             className = { Styles.general }
             onSubmit = { handleSubmit }>
             <div className = { bodyStyles } >
-                <Field
-                    component = { BirthDate }
-                    label = 'date of birth'
-                    name = 'date_of_birth'
-                    type = 'text'
-                />
+                <BirthDate />
 
                 <Gender />
 
