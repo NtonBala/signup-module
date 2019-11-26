@@ -1,15 +1,28 @@
 // Core
 import React from 'react';
 import { Field } from 'redux-form';
+import Select from 'react-select';
 
 // Instruments
 import Styles from './styles.m.css';
 
-const sources = [
-    'Internet',
-    'Facebook',
-    'Another customer',
-    'Other'
+const options = [
+    {
+        value: 'internet',
+        label: 'Internet',
+    },
+    {
+        value: 'facebook',
+        label: 'Facebook',
+    },
+    {
+        value: 'colleagues',
+        label: 'Colleagues',
+    },
+    {
+        value: 'other',
+        label: 'Other',
+    }
 ];
 
 const HearSelector = () => {
@@ -23,16 +36,10 @@ const HearSelector = () => {
 
                             { touched && error && <span>{error}</span> }
 
-                            <select { ...input }>
-                                <option value = '' />
-                                { sources.map((value) => (
-                                    <option
-                                        key = { value }
-                                        value = { value }>
-                                        { value }
-                                    </option>
-                                )) }
-                            </select>
+                            <Select
+                                { ...input }
+                                options = { options }
+                            />
                         </>
                     );
                 } }
