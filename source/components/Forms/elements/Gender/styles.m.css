@@ -1,3 +1,101 @@
 .gender {
+    & input[type='radio'] {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: -9999px;
+    }
 
+    & div {
+        display: flex;
+
+        & label {
+            flex-grow: 1;
+            flex-basis: 0;
+            display: flex;
+            border: .1em solid var(--paletteColor6);
+            cursor: pointer;
+            height: 3em;
+            box-sizing: border-box;
+            position: relative;
+
+            & span {
+                flex-grow: 1;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                box-sizing: content-box;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        & label:nth-child(1) {
+            border-right: 0;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+
+        & label:nth-child(2) {
+            border-left: .1em solid var(--paletteColor6);
+            border-right: 0;
+        }
+
+        & label:nth-child(3) {
+            border-right: .1em solid var(--paletteColor6);
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+
+        & .selected {
+            & span {
+                background-color: var(--paletteColor4);
+                color: var(--paletteColor3);
+                font-weight: bolder;
+                border: .1em solid var(--paletteColor4);
+                border-radius: 3px;
+                top: -.1em;
+                left: -.1em;
+                z-index: 1;
+            }
+
+            &:nth-child(1) {
+                border-top-left-radius: 3px;
+                border-bottom-left-radius: 3px;
+            }
+
+            &:nth-child(3) {
+                border-top-right-radius: 3px;
+                border-bottom-right-radius: 3px;
+            }
+        }
+
+        & label:hover:not(.selected) {
+            & span {
+                background-color: var(--paletteColor3);
+                color: var(--paletteColor8);
+                font-weight: normal;
+                border: .1em solid var(--paletteColor4);
+                top: -.1em;
+                left: -.1em;
+                z-index: 2;
+            }
+
+            &:nth-child(1) {
+                & span {
+                    border-top-left-radius: 3px;
+                    border-bottom-left-radius: 3px;
+                }
+            }
+
+            &:nth-child(3) {
+                & span {
+                    border-top-right-radius: 3px;
+                    border-bottom-right-radius: 3px;
+                }
+            }
+        }
+    }
 }

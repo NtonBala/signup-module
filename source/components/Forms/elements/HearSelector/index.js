@@ -15,12 +15,14 @@ const sources = [
 const HearSelector = () => {
     return (
         <div className = { Styles.hearSelector }>
-            <label>where did you hear about us?</label>
-
             <Field
-                component = { ({ input, meta: { touched, error }}) => {
+                component = { ({ input, meta: { touched, error, valid }}) => {
                     return (
-                        <div>
+                        <>
+                            { valid && <label>where did you hear about us?</label> }
+
+                            { touched && error && <span>{error}</span> }
+
                             <select { ...input }>
                                 <option value = '' />
                                 { sources.map((value) => (
@@ -31,9 +33,7 @@ const HearSelector = () => {
                                     </option>
                                 )) }
                             </select>
-
-                            { touched && error && <span>{error}</span> }
-                        </div>
+                        </>
                     );
                 } }
                 name = 'how_hear_about_us'

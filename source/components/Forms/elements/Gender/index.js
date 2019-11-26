@@ -1,11 +1,13 @@
 // Core
 import React from 'react';
-import { Field } from 'redux-form';
+import { Field, formValueSelector } from 'redux-form';
+import { string } from 'prop-types';
+import { connect } from 'react-redux';
 
 // Instruments
 import Styles from './styles.m.css';
 
-const Gender = () => {
+const Gender = ({ value }) => {
     return (
         <div className = { Styles.gender }>
             <Field
@@ -16,38 +18,52 @@ const Gender = () => {
             />
 
             <div>
-                <label>
+                <label className = { value === 'male' ? Styles.selected : '' } >
                     <Field
                         component = 'input'
                         name = 'gender'
                         type = 'radio'
                         value = 'male'
                     />
-                    MALE
+                    <span>MALE</span>
                 </label>
 
-                <label>
+                <label className = { value === 'female' ? Styles.selected : '' } >
                     <Field
                         component = 'input'
                         name = 'gender'
                         type = 'radio'
                         value = 'female'
                     />
-                    FEMALE
+                    <span>FEMALE</span>
                 </label>
 
-                <label>
+                <label className = { value === 'unspecified' ? Styles.selected : '' } >
                     <Field
                         component = 'input'
                         name = 'gender'
                         type = 'radio'
                         value = 'unspecified'
                     />
-                    UNSPECIFIED
+                    <span>UNSPECIFIED</span>
                 </label>
             </div>
         </div>
     );
 };
 
-export default Gender;
+Gender.propTypes = {
+    value: string.isRequired,
+};
+
+const valueSelector = formValueSelector('wizardSignup');
+
+const mapState = (state) => {
+    return {
+        value: valueSelector(state, 'gender') || '',
+    };
+};
+
+export default connect(
+    mapState
+)(Gender);
