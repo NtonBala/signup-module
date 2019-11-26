@@ -58,8 +58,8 @@ export const setupHtml = () => ({
         new HtmlWebpackPlugin({
             inject:   false,
             template: HtmlWebpackTemplate,
-            title:    'Signup Module',
-            favicon:  `${statics}/favicon/React.js-favicon-512x512.png`,
+            title:    'SignupModule',
+            favicon:  `${statics}/favicon/favicon-512x512.png`,
             meta:     [
                 {
                     name:    'viewport',
