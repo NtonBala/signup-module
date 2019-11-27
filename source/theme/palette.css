@@ -6,8 +6,8 @@
     --paletteColor4:  #348BE8; /* progress bar, arrows, button border */
     --paletteColor5:  #F30000; /* errors */
     --paletteColor6:  #C4C4C4; /* progress border, field bottom border */
-    --paletteColor7:  #5C5B65; /* label */
+    --paletteColor7:  #5C5B65; /* label, input text */
     --paletteColor8:  #1770CF; /* submit on hover */
     --paletteColor9:  #AFAFB6; /* back button */
-    --paletteColor10: #888792; /* back button on hover, input text */
+    --paletteColor10: #888792; /* back button on hover */
 }

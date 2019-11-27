@@ -9,7 +9,7 @@
         border: none;
         border-bottom: .1em solid var(--paletteColor6);
         font-size: 1em;
-        color: var(--paletteColor10);
+        color: var(--paletteColor7);
     }
 
     & input[type='password'] {
