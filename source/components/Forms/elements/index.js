@@ -4,6 +4,8 @@ import BirthDate from './BirthDate';
 import Gender from './Gender';
 import HearSelector from './HearSelector';
 import Nav from './Nav';
+import DropdownIndicator from './DropdownIndicator';
+import ClearIndicator from './ClearIndicator';
 
 export {
     TextField,
@@ -11,5 +13,7 @@ export {
     BirthDate,
     Gender,
     HearSelector,
-    Nav
+    Nav,
+    DropdownIndicator,
+    ClearIndicator
 };
