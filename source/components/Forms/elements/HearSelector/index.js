@@ -3,6 +3,9 @@ import React from 'react';
 import { Field } from 'redux-form';
 import Select from 'react-select';
 
+// Elements
+import { DropdownIndicator, ClearIndicator } from '../../elements';
+
 // Instruments
 import Styles from './styles.m.css';
 
@@ -74,7 +77,9 @@ const HearSelector = () => {
             <Field
                 component = { ({ input, meta: { touched, error, valid }}) => {
                     const _onBlur = () => {
-                        input.onBlur(input.value);
+                        setTimeout(() => {
+                            input.onBlur(input.value);
+                        }, 1);
                     };
 
                     const _onChange = (value) => {
@@ -93,9 +98,11 @@ const HearSelector = () => {
                                     isClearable
                                     components = { {
                                         IndicatorSeparator: () => null,
+                                        Placeholder:        () => null,
+                                        DropdownIndicator,
+                                        ClearIndicator,
                                     } }
                                     options = { options }
-                                    placeholder = { null }
                                     styles = { selectStyles }
                                     onBlur = { _onBlur }
                                     onChange = { _onChange }

@@ -31,7 +31,10 @@ const Nav = ({ step, stepBackward }) => {
                 className = { Styles.next }
                 type = 'submit'>
                 Next
-                <img src = { rightArrow } />
+                <img
+                    alt = 'right arrow'
+                    src = { rightArrow }
+                />
             </button>
         </div>
     );

@@ -17,7 +17,10 @@ let ThirdStep = ({ handleSubmit }) => {
                 <img src = { successCircle } />
                 <button type = 'submit'>
                     Go to Dashboard
-                    <img src = { rightArrow } />
+                    <img
+                        alt = 'right arrow'
+                        src = { rightArrow }
+                    />
                 </button>
             </div>
         </form>

@@ -34,9 +34,6 @@ body {
 
 .page {
     min-height: 100vh;
-}
-
-.centered-content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,4 +45,11 @@ button {
     cursor: pointer;
     border: 0;
     background: transparent;
+}
+
+@media only screen and (max-width: 340px) {
+    .page {
+        display: block;
+        padding-top: 3em;
+    }
 }
