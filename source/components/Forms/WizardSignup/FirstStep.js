@@ -8,6 +8,8 @@ import { TextField, Nav } from '../elements';
 
 // Instruments
 import Styles from './styles.m.css';
+import { validateWizardSignup } from '../../../instruments/validate';
+import { mockedData } from '../../../instruments/mockedData';
 
 let FirstStep = ({ handleSubmit }) => {
     return (
@@ -50,7 +52,8 @@ FirstStep = reduxForm({
     form:                     'wizardSignup',
     destroyOnUnmount:         false,
     forceUnregisterOnUnmount: true,
-    validate:                 () => {},
+    validate:                 validateWizardSignup,
+    initialValues:            mockedData,
 })(FirstStep);
 
 export default FirstStep;

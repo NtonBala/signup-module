@@ -1,7 +1,7 @@
 // Core
 import React from 'react';
-import { func } from 'prop-types';
-import { reduxForm } from 'redux-form';
+import { func, object } from 'prop-types';
+import { reduxForm, Field } from 'redux-form';
 import cx from 'classnames';
 
 // Elements
@@ -9,8 +9,10 @@ import { BirthDate, Gender, HearSelector, Nav } from '../elements';
 
 // Instruments
 import Styles from './styles.m.css';
+import { validateWizardSignup } from '../../../instruments/validate';
+import { normalizeBirthDate } from '../../../instruments/normalize';
 
-let SecondStep = ({ handleSubmit, stepBackward }) => {
+let SecondStep = ({ actions, handleSubmit, stepBackward }) => {
     const _getBodyStyles = () => {
         return cx(Styles.body, Styles.second);
     };
@@ -22,7 +24,14 @@ let SecondStep = ({ handleSubmit, stepBackward }) => {
             className = { Styles.general }
             onSubmit = { handleSubmit }>
             <div className = { bodyStyles } >
-                <BirthDate />
+                <Field
+                    component = { BirthDate }
+                    name = 'date_of_birth'
+                    props = { {
+                        onChange:  actions.changeBirthDate,
+                        normalize: normalizeBirthDate,
+                    } }
+                />
 
                 <Gender />
 
@@ -38,6 +47,7 @@ let SecondStep = ({ handleSubmit, stepBackward }) => {
 };
 
 SecondStep.propTypes = {
+    actions:      object.isRequired,
     handleSubmit: func.isRequired,
     stepBackward: func.isRequired,
 };
@@ -46,7 +56,7 @@ SecondStep = reduxForm({
     form:                     'wizardSignup',
     destroyOnUnmount:         false,
     forceUnregisterOnUnmount: true,
-    validate:                 () => {},
+    validate:                 validateWizardSignup,
 })(SecondStep);
 
 export default SecondStep;
