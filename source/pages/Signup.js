@@ -7,13 +7,11 @@ import { Catcher, Spinner, WizardSignupForm } from '../components';
 const SignupPage = () => {
     const onSubmit = (values) => {
         const {
-            confirmPassword: deletedKey,
+            confirmPassword:   deletedKey, // eslint-disable-line no-unused-vars
             how_hear_about_us: howHearAboutUs,
             ...otherValues
         } = values;
 
-        console.log('-> howHearAboutUs:', howHearAboutUs);
-    
         const data = {
             ...otherValues,
             'how_hear_about_us': howHearAboutUs ? howHearAboutUs.value : null,

@@ -8,7 +8,7 @@ import Styles from './styles.m.css';
 const TextField = ({ input, meta: { valid, error, touched }, label, type = 'text' }) => {
     return (
         <div className = { Styles.field }>
-            { label && valid &&
+            { (!touched || valid) &&
                 <label htmlFor = { name }>{ label }</label>
             }
 
@@ -26,8 +26,8 @@ const TextField = ({ input, meta: { valid, error, touched }, label, type = 'text
 
 TextField.propTypes = {
     input: object.isRequired,
+    label: string.isRequired,
     meta:  object.isRequired,
-    label: string,
     type:  string,
 };
 

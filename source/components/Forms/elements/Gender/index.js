@@ -11,8 +11,14 @@ const Gender = ({ value }) => {
     return (
         <div className = { Styles.gender }>
             <Field
-                component = { ({ meta: { touched, error }}) => {
-                    return touched && error ? <span>{ error }</span> : <label>gender</label>;
+                component = { ({ meta: { touched, error, valid }}) => {
+                    return (
+                        <>
+                            { (!touched || valid) && <label htmlFor = { name }>gender</label>}
+
+                            { touched && error && <strong>{ error }</strong> }
+                        </>
+                    );
                 } }
                 name = 'gender'
             />

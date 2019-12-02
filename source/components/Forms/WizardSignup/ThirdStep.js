@@ -7,6 +7,7 @@ import { reduxForm } from 'redux-form';
 import Styles from './styles.m.css';
 import successCircle from 'theme/assets/success-circle';
 import rightArrow from 'theme/assets/right-arrow';
+import { validateWizardSignup } from '../../../instruments/validate';
 
 let ThirdStep = ({ handleSubmit }) => {
     return (
@@ -35,7 +36,7 @@ ThirdStep = reduxForm({
     form:                     'wizardSignup',
     destroyOnUnmount:         false,
     forceUnregisterOnUnmount: true,
-    validate:                 () => {},
+    validate:                 validateWizardSignup,
 })(ThirdStep);
 
 export default ThirdStep;

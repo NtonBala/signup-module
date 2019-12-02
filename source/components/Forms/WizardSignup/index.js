@@ -1,6 +1,9 @@
 // Core
 import React, { useState } from 'react';
-import { func } from 'prop-types';
+import { func, shape } from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { change } from 'redux-form';
 
 // Steps
 import FirstStep from './FirstStep';
@@ -13,7 +16,7 @@ import { ProgressBar } from '../elements';
 // Instruments
 import Styles from './styles.m.css';
 
-const WizardSignup = ({ onSubmit }) => {
+const WizardSignup = ({ actions, onSubmit }) => {
     const [step, setStep] = useState(1);
 
     const stepForward = () => {
@@ -36,6 +39,7 @@ const WizardSignup = ({ onSubmit }) => {
 
             { step === 2 &&
                 <SecondStep
+                    actions = { { ...actions } }
                     stepBackward = { stepBackward }
                     onSubmit = { stepForward }
                 />
@@ -47,7 +51,19 @@ const WizardSignup = ({ onSubmit }) => {
 };
 
 WizardSignup.propTypes = {
+    actions: shape({
+        changeBirthDate: func.isRequired,
+    }).isRequired,
     onSubmit: func.isRequired,
 };
 
-export default WizardSignup;
+const mapDispatch = (dispatch) => {
+    return {
+        actions: bindActionCreators({ changeBirthDate: change }, dispatch),
+    };
+};
+
+export default connect(
+    null,
+    mapDispatch
+)(WizardSignup);
