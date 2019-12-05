@@ -18,9 +18,11 @@ const BirthDate = ({ input, meta, onChange, normalize }) => {
             return i === elIndex ? newValue : current;
         });
 
-        const normalizedValues = normalize(newValues);
-
-        onChange('wizardSignup', 'date_of_birth', normalizedValues);
+        onChange(
+            'wizardSignup',
+            'date_of_birth',
+            normalize(newValues)
+        );
     };
 
     const inputsJSX = values.map((value, i) => {

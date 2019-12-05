@@ -4,18 +4,12 @@ import React from 'react';
 // Components
 import { Catcher, Spinner, WizardSignupForm } from '../components';
 
+// Instruments
+import { formatUserInfo } from '../instruments/helpers';
+
 const SignupPage = () => {
     const onSubmit = (values) => {
-        const {
-            confirmPassword:   deletedKey, // eslint-disable-line no-unused-vars
-            how_hear_about_us: howHearAboutUs,
-            ...otherValues
-        } = values;
-
-        const data = {
-            ...otherValues,
-            'how_hear_about_us': howHearAboutUs ? howHearAboutUs.value : null,
-        };
+        const data = formatUserInfo(values);
 
         console.log('-> user data:', JSON.stringify(data, null, 2));
     };

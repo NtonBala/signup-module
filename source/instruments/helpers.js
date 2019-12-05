@@ -1,3 +1,25 @@
+// General
+export const formatUserInfo = (values) => {
+    const {
+        confirmPassword:   deletedKey, // eslint-disable-line no-unused-vars
+        how_hear_about_us: howHearAboutUs,
+        date_of_birth:     birthDate,
+        ...otherValues
+    } = values;
+
+    const formattedBirthDate = birthDate.map((val, i) => {
+        return i === 1 ? `${Number(val) - 1}` : val;
+    });
+
+    const data = {
+        ...otherValues,
+        'date_of_birth':     new Date(...formattedBirthDate).getTime(),
+        'how_hear_about_us': howHearAboutUs ? howHearAboutUs.value : null,
+    };
+
+    return data;
+};
+
 // Validation
 export const isBirthDateEmpty = (value) => {
     const isProvided = Boolean(value);
