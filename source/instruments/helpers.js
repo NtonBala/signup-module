@@ -17,9 +17,9 @@ export const isBirthDateValid = (value) => {
     });
 
     return !value.includes('')
-    && year <= new Date().getFullYear()
-    && month <= 12
-    && day <= new Date(year, month, 0).getDate();
+    && (year > 0 && year <= new Date().getFullYear())
+    && (month > 0 && month <= 12)
+    && (day > 0 && day <= new Date(year, month, 0).getDate());
 };
 
 export const isAdult = (value) => {
