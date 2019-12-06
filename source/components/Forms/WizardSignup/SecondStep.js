@@ -5,12 +5,31 @@ import { reduxForm, Field } from 'redux-form';
 import cx from 'classnames';
 
 // Elements
-import { BirthDate, Gender, HearSelector, Nav } from '../elements';
+import { BirthDate, Gender, CustomSelector, Nav } from '../elements';
 
 // Instruments
 import Styles from './styles.m.css';
 import { validateWizardSignup } from '../../../instruments/validate';
 import { normalizeBirthDate } from '../../../instruments/normalize';
+
+const hearOptions = [
+    {
+        value: 'internet',
+        label: 'Internet',
+    },
+    {
+        value: 'facebook',
+        label: 'Facebook',
+    },
+    {
+        value: 'colleagues',
+        label: 'Colleagues',
+    },
+    {
+        value: 'other',
+        label: 'Other',
+    }
+];
 
 let SecondStep = ({ actions, handleSubmit, stepBackward }) => {
     const _getBodyStyles = () => {
@@ -35,7 +54,12 @@ let SecondStep = ({ actions, handleSubmit, stepBackward }) => {
 
                 <Gender />
 
-                <HearSelector />
+                <Field
+                    component = { CustomSelector }
+                    label = 'where did you hear about us?'
+                    name = 'how_hear_about_us'
+                    options = { hearOptions }
+                />
             </div>
 
             <Nav
