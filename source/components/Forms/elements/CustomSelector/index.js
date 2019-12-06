@@ -80,7 +80,6 @@ const CustomSelector = ({ input, meta: { touched, error, valid }, options, label
                 options = { options }
                 styles = { selectStyles }
                 onBlur = { _onBlur }
-                onBlurResetsInput = { false }
                 onChange = { _onChange }
             />
 
