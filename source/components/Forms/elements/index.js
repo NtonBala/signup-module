@@ -2,7 +2,7 @@ import TextField from './TextField';
 import ProgressBar from './ProgressBar';
 import BirthDate from './BirthDate';
 import Gender from './Gender';
-import HearSelector from './HearSelector';
+import CustomSelector from './CustomSelector';
 import Nav from './Nav';
 import DropdownIndicator from './DropdownIndicator';
 import ClearIndicator from './ClearIndicator';
@@ -12,7 +12,7 @@ export {
     ProgressBar,
     BirthDate,
     Gender,
-    HearSelector,
+    CustomSelector,
     Nav,
     DropdownIndicator,
     ClearIndicator
