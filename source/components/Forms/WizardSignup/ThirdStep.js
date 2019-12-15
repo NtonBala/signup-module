@@ -16,6 +16,7 @@ let ThirdStep = ({ handleSubmit }) => {
             onSubmit = { handleSubmit }>
             <div>
                 <img src = { successCircle } />
+
                 <button type = 'submit'>
                     Go to Dashboard
                     <img

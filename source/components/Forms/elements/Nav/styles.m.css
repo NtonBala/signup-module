@@ -2,7 +2,6 @@
     padding: 1em;
     display: flex;
     justify-content: space-between;
-    border-top: .1em solid var(--paletteColor1);
 
     &.reverse {
         flex-direction: row-reverse;

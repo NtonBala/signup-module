@@ -27,8 +27,9 @@ const BirthDate = ({ input, meta, onChange, normalize }) => {
 
     const inputsJSX = values.map((value, i) => {
         const maxLength = i === 0 ? '4' : '2';
-        const placeholder = i === 0 ? 'YYYY' : i === 1
-            ? 'MM' : 'DD';
+
+        const placeholder = i === 0 ? 'YYYY'
+            : i === 1 ? 'MM' : 'DD';
 
         return (
             <input
