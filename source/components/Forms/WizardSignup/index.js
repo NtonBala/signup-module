@@ -22,8 +22,9 @@ const WizardSignup = ({ actions, onSubmit }) => {
     const [step, setStep] = useState(1);
 
     const timeout = {
-        enter: 600,
-        exit:  1000,
+        appear: 0,
+        enter:  600,
+        exit:   1000,
     };
 
     const _stepForward = () => {
@@ -64,6 +65,8 @@ const WizardSignup = ({ actions, onSubmit }) => {
 
             <div className = { Styles.wrapper }>
                 <Transition
+                    appear
+                    unmountOnExit
                     in = { step === 1 }
                     timeout = { timeout }
                     onEntered = { _animateStepEnter }
@@ -72,6 +75,8 @@ const WizardSignup = ({ actions, onSubmit }) => {
                 </Transition>
 
                 <Transition
+                    mountOnEnter
+                    unmountOnExit
                     in = { step === 2 }
                     timeout = { timeout }
                     onEntered = { _animateStepEnter }
@@ -84,6 +89,8 @@ const WizardSignup = ({ actions, onSubmit }) => {
                 </Transition>
 
                 <Transition
+                    mountOnEnter
+                    unmountOnExit
                     in = { step === 3 }
                     timeout = { timeout }
                     onEntered = { _animateStepEnter }
