@@ -7,7 +7,7 @@
         width: 33.3%;
         height: .4em;
         background-color: var(--paletteColor4);
-        transition: width 2s ease;
+        transition: width 1s ease .6s;
     }
 
     & .secondStep {
