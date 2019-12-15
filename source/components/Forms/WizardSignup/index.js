@@ -47,8 +47,10 @@ const WizardSignup = ({ actions, onSubmit }) => {
         <div className = { Styles.form } >
             <div className = { Styles.heading }>
                 <Transition
+                    appear
                     in = { step !== 3 }
                     timeout = { timeout }
+                    onEntered = { _animateStepEnter }
                     onExit = { _animateStepExit }>
                     <h3>Signup</h3>
                 </Transition>
